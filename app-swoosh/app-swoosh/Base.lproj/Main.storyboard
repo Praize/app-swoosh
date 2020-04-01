@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--WelcomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="WelcomeVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,17 +84,17 @@
                     </view>
                     <connections>
                         <outlet property="bgImg" destination="3FU-wO-7QT" id="l5K-S2-krg"/>
-                        <outlet property="swoosh" destination="JV7-cP-qCL" id="h6m-fp-OMM"/>
+                        <outlet property="swoosh" destination="JV7-cP-qCL" id="rXv-Zj-Yui"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--LeagueVC-->
         <scene sceneID="VEk-UQ-emy">
             <objects>
-                <viewController id="gxg-fm-bkY" sceneMemberID="viewController">
+                <viewController id="gxg-fm-bkY" customClass="LeagueVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VRT-P7-O1c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-I0-yC5">
-                                <rect key="frame" x="20" y="234" width="374" height="115"/>
+                                <rect key="frame" x="20" y="234" width="374" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8YO-em-9t8" customClass="Borderbutton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -129,6 +129,9 @@
                                         <state key="normal" title="Mens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="menTapped:" destination="gxg-fm-bkY" eventType="touchUpInside" id="nDU-oU-BBA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uvj-HW-uNb" customClass="Borderbutton" customModule="app_swoosh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="374" height="50"/>
@@ -140,20 +143,26 @@
                                         <state key="normal" title="Womens">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="womenTapped:" destination="gxg-fm-bkY" eventType="touchUpInside" id="W89-LU-9if"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE5-AT-DJb" customClass="Borderbutton" customModule="app_swoosh" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="130" width="374" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ObT-ZJ-D1i"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                        <state key="normal" title="Co-ed">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="CoedTapped:" destination="gxg-fm-bkY" eventType="touchUpInside" id="GQx-Zd-SEJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4j-Nw-IDE" customClass="Borderbutton" customModule="app_swoosh" customModuleProvider="target">
-                                <rect key="frame" x="20" y="778" width="374" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="YdB-PK-vFR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEx-Zd-K38">
                                 <rect key="frame" x="10" y="44" width="69" height="44"/>
                                 <constraints>
@@ -163,6 +172,20 @@
                                 <state key="normal" image="backButton"/>
                                 <connections>
                                     <segue destination="F1n-VM-GAI" kind="unwind" unwindAction="unwindFromSkillVCWithUnwindSegue:" id="5cX-Qj-v8s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4j-Nw-IDE" customClass="Borderbutton" customModule="app_swoosh" customModuleProvider="target">
+                                <rect key="frame" x="20" y="778" width="374" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YdB-PK-vFR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="gxg-fm-bkY" eventType="touchUpInside" id="cwK-oE-1gu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -186,16 +209,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SDH-LD-dv6"/>
                     </view>
+                    <connections>
+                        <outlet property="nextBtn" destination="p4j-Nw-IDE" id="rSZ-T8-AOP"/>
+                        <segue destination="dZ5-Bc-Qnx" kind="show" identifier="toTheSkill" id="HxR-ah-W8h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqJ-6F-xvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="F1n-VM-GAI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="857.97101449275374" y="138.61607142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--SkillVC-->
         <scene sceneID="Jbi-nS-MSX">
             <objects>
-                <viewController id="dZ5-Bc-Qnx" sceneMemberID="viewController">
+                <viewController id="dZ5-Bc-Qnx" customClass="SkillVC" customModule="app_swoosh" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="adr-ZK-ixl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
